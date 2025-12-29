@@ -8,31 +8,8 @@
     
     <title>Laman Unofficial LPKA Kelas 1 Kutoarjo</title>
     
-    <meta name="description" content="Selamat datang di Laman Unofficial LPKA Kelas 1 Kutoarjo. Akses informasi terkini melalui menu Beranda, Profil, Kepegawaian, Layanan, Berita, dan Kontak kami secara mudah dan cepat.">
+    <meta name="description" content="Selamat datang di Laman Unofficial LPKA Kelas 1 Kutoarjo.">
     
-    <meta name="keywords" content="LPKA Kutoarjo, Beranda, Profil, Kepegawaian, Layanan, Berita, Kontak, Kemenimipas, LPKA Kelas 1 Kutoarjo">
-    
-    <script type="application/ld+json">
-    {
-      "@context": "https://schema.org",
-      "@type": "WebSite",
-      "name": "Laman Unofficial LPKA Kelas 1 Kutoarjo",
-      "url": "", 
-      "potentialAction": {
-        "@type": "SearchAction",
-        "target": "{search_term_string}",
-        "query-input": "required name=search_term_string"
-      },
-      "hasPart": [
-        { "@type": "SiteNavigationElement", "name": "Beranda", "url": "#" },
-        { "@type": "SiteNavigationElement", "name": "Profil", "url": "#pejabat-section" },
-        { "@type": "SiteNavigationElement", "name": "Kepegawaian", "url": "#" },
-        { "@type": "SiteNavigationElement", "name": "Layanan", "url": "#layanan-section" },
-        { "@type": "SiteNavigationElement", "name": "Berita", "url": "#berita-section" },
-        { "@type": "SiteNavigationElement", "name": "Kontak", "url": "#kontak-section" }
-      ]
-    }
-    </script>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
@@ -51,77 +28,27 @@
         body { font-family: 'Inter', sans-serif; background-color: var(--bg-light); color: var(--text-dark); overflow-x: hidden; }
         h1, h2, h3, h4, h5, h6, .navbar-brand { font-family: 'Poppins', sans-serif; }
 
-        /* --- LOADING SCREEN STYLES --- */
+        /* --- LOADING SCREEN --- */
         #loader-wrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: #ffffff;
-            z-index: 9999;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-            transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
+            position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+            background: #ffffff; z-index: 9999; display: flex; flex-direction: column;
+            justify-content: center; align-items: center; transition: opacity 0.5s;
         }
-
-        .loader-content {
-            position: relative;
-            text-align: center;
-        }
-
-        .loader-img {
-            width: 120px;
-            height: auto;
-            margin-bottom: 20px;
-            animation: bounce-garcy 2s infinite ease-in-out;
-        }
-
-        /* Lingkaran Loading di belakang Garcy */
+        .loader-content { position: relative; text-align: center; }
+        .loader-img { width: 120px; height: auto; margin-bottom: 20px; animation: bounce-garcy 2s infinite ease-in-out; }
         .spinner-ring {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 160px;
-            height: 160px;
-            transform: translate(-50%, -65%); 
-            border: 5px solid rgba(0, 51, 102, 0.1);
-            border-top: 5px solid var(--accent-gold);
-            border-radius: 50%;
-            animation: spin 1.5s linear infinite;
-            z-index: -1;
+            position: absolute; top: 50%; left: 50%; width: 160px; height: 160px;
+            transform: translate(-50%, -65%); border: 5px solid rgba(0, 51, 102, 0.1);
+            border-top: 5px solid var(--accent-gold); border-radius: 50%; animation: spin 1.5s linear infinite; z-index: -1;
         }
-
-        .loading-text {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 600;
-            color: var(--primary-blue);
-            font-size: 1.2rem;
-            letter-spacing: 1px;
-            margin-top: 10px;
-            animation: pulse-text 1.5s infinite;
-        }
-
-        .loader-hidden {
-            opacity: 0;
-            visibility: hidden;
-            pointer-events: none;
-        }
-
+        .loading-text { font-family: 'Poppins', sans-serif; font-weight: 600; color: var(--primary-blue); font-size: 1.2rem; letter-spacing: 1px; margin-top: 10px; animation: pulse-text 1.5s infinite; }
+        .loader-hidden { opacity: 0; visibility: hidden; pointer-events: none; }
         @keyframes spin { 0% { transform: translate(-50%, -65%) rotate(0deg); } 100% { transform: translate(-50%, -65%) rotate(360deg); } }
         @keyframes bounce-garcy { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
         @keyframes pulse-text { 0%, 100% { opacity: 0.6; } 50% { opacity: 1; } }
 
-
         /* --- TOP BAR & HEADER --- */
-        .top-bar { 
-            background: linear-gradient(90deg, var(--primary-blue) 0%, var(--secondary-blue) 100%); 
-            color: white; 
-            padding: 8px 0; 
-            font-size: 0.85rem; 
-        }
+        .top-bar { background: linear-gradient(90deg, var(--primary-blue) 0%, var(--secondary-blue) 100%); color: white; padding: 8px 0; font-size: 0.85rem; }
         .top-bar a { color: white; text-decoration: none; transition: 0.3s; }
         .top-bar a:hover { color: var(--accent-gold); }
 
@@ -133,8 +60,6 @@
         
         @media (max-width: 768px) {
             .top-bar { font-size: 0.75rem; padding: 10px 0; }
-            .top-bar .row > div { margin-bottom: 5px; }
-            .top-bar .contact-info { display: flex; flex-direction: column; gap: 3px; }
             .logo-img { height: 50px; margin-right: 8px !important; }
             .logo-text h1 { font-size: 1.1rem; }
             .logo-text h2 { font-size: 0.65rem; }
@@ -148,100 +73,49 @@
         .dropdown-menu { border: none; border-top: 4px solid var(--accent-gold); border-radius: 0 0 8px 8px; }
 
         /* --- HERO SLIDER --- */
-        .carousel-item { position: relative; width: 100%; }
-        .carousel-item img { 
-            width: 100%; height: 600px; object-fit: cover; object-position: center; 
-        }
-        .carousel-item::after {
-            content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%;
-            background: linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgba(0,0,0,0.7) 90%);
-            z-index: 1;
-        }
-        
-        .carousel-caption { 
-            bottom: 15%; 
-            left: 5%; right: 5%; 
-            text-align: center; 
-            z-index: 2;
-            padding-bottom: 20px;
-        }
-
-        .carousel-caption h2 { 
-            color: #ffffff; text-transform: uppercase; letter-spacing: 2px; font-size: 2.2rem; font-weight: 700; margin-bottom: 1rem;
-            text-shadow: 0px 4px 10px rgba(0,0,0,0.6);
-        }
-        
-        .carousel-caption p { 
-            color: #f0f0f0; font-weight: 400; font-size: 1.1rem; letter-spacing: 0.5px; max-width: 800px; margin: 0 auto 20px auto;
-            text-shadow: 0px 2px 5px rgba(0,0,0,0.7);
-        }
-
-        .btn-banner {
-            font-size: 0.9rem; padding: 10px 25px; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.3s;
-        }
+        .carousel-item img { width: 100%; height: 600px; object-fit: cover; object-position: center; }
+        .carousel-item::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgba(0,0,0,0.7) 90%); z-index: 1; }
+        .carousel-caption { bottom: 15%; left: 5%; right: 5%; text-align: center; z-index: 2; padding-bottom: 20px; }
+        .carousel-caption h2 { color: #ffffff; text-transform: uppercase; letter-spacing: 2px; font-size: 2.2rem; font-weight: 700; margin-bottom: 1rem; text-shadow: 0px 4px 10px rgba(0,0,0,0.6); }
+        .carousel-caption p { color: #f0f0f0; font-weight: 400; font-size: 1.1rem; letter-spacing: 0.5px; max-width: 800px; margin: 0 auto 20px auto; text-shadow: 0px 2px 5px rgba(0,0,0,0.7); }
+        .btn-banner { font-size: 0.9rem; padding: 10px 25px; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.3s; }
         .btn-banner:hover { transform: translateY(-3px); }
-        
-        @media (max-width: 768px) {
-            .carousel-item img { height: 350px; }
-            .carousel-caption { bottom: 10%; }
-            .carousel-caption h2 { font-size: 1.2rem; letter-spacing: 1px; margin-bottom: 5px; }
-            .carousel-caption p { font-size: 0.8rem; line-height: 1.4; display: block; } 
-            .btn-banner { font-size: 0.75rem; padding: 6px 15px; margin-top: 5px; }
-        }
+        @media (max-width: 768px) { .carousel-item img { height: 350px; } }
 
-        /* --- CARD BERITA --- */
+        /* --- CARD BERITA & DOC --- */
         .card-news { border: none; border-radius: 12px; background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.4s; height: 100%; overflow: hidden; }
         .card-news:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
         .news-img-wrapper { height: 220px; overflow: hidden; position: relative; }
         .news-img-wrapper img { transition: transform 0.5s; width: 100%; height: 100%; object-fit: cover; }
         .card-news:hover .news-img-wrapper img { transform: scale(1.1); }
-        .news-date-badge { position: absolute; top: 15px; right: 15px; background: var(--accent-gold); color: var(--primary-blue); padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
-        .news-title a { color: var(--primary-blue); transition: 0.2s; }
+        .news-date-badge { position: absolute; top: 15px; right: 15px; background: var(--accent-gold); color: var(--primary-blue); padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; }
+        
+        .card-doc { border: none; border-radius: 10px; background: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; overflow: hidden; height: 100%; cursor: pointer; }
+        .card-doc:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); border-bottom: 4px solid var(--accent-gold); }
+        .doc-thumb { height: 160px; background: #eee; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
+        .doc-thumb img { width: 100%; height: 100%; object-fit: cover; }
+        .doc-icon { font-size: 3rem; color: #888; }
+        .doc-overlay { position: absolute; top:0; left:0; width:100%; height:100%; background:rgba(0,0,0,0.3); display:flex; align-items:center; justify-content:center; opacity:0; transition:0.3s; }
+        .card-doc:hover .doc-overlay { opacity:1; }
 
-        /* --- SIDEBAR & LAYANAN --- */
+        /* --- SIDEBAR & PEJABAT --- */
         .sidebar-widget { background: white; padding: 30px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border: 1px solid #eee; }
         @media (min-width: 992px) { .sticky-sidebar { position: sticky; top: 100px; } }
         
-        /* STYLE KHUSUS KEPALA LPKA */
-        .kepala-img-container {
-            width: 180px; height: 220px; margin: 0 auto 20px;
-            border-radius: 8px; overflow: hidden;
-            box-shadow: 0 10px 30px rgba(0, 51, 102, 0.25); background-color: #e9ecef;
-        }
+        /* Modifikasi Container Kepala agar bisa diklik */
+        .kepala-container { cursor: pointer; transition: transform 0.3s; }
+        .kepala-container:hover { transform: scale(1.02); }
+        .kepala-img-container { width: 180px; height: 220px; margin: 0 auto 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 51, 102, 0.25); background-color: #e9ecef; }
         .kepala-img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: all 0.5s ease; }
-        .kepala-container:hover .kepala-img { transform: scale(1.03); }
-        
-        .service-box { background: white; padding: 35px 25px; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); height: 100%; transition: 0.3s; border-bottom: 5px solid transparent; cursor: pointer; }
-        .service-box:hover { transform: translateY(-10px); border-bottom: 5px solid var(--accent-gold); }
-        .service-icon { width: 80px; height: 80px; line-height: 80px; background: rgba(0, 51, 102, 0.05); color: var(--primary-blue); border-radius: 50%; margin: 0 auto 20px; font-size: 2rem; transition: 0.5s; }
-        .service-box:hover .service-icon { background: var(--primary-blue); color: var(--accent-gold); transform: rotateY(360deg); }
+        .kepala-container:hover .kepala-img { transform: scale(1.05); }
 
-        /* --- CARD VIDEO SIDEBAR --- */
-        .sidebar-video-card {
-            border: none; border-radius: 12px; overflow: hidden; 
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
-            transition: transform 0.3s ease;
-            text-decoration: none; display: block; background: #000;
-            position: relative;
-            margin-bottom: 20px;
-        }
-        .sidebar-video-card:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(0,0,0,0.2); }
-        .sidebar-video-thumbnail {
-            width: 100%; height: 180px; 
-            object-fit: cover; opacity: 0.85; transition: opacity 0.3s;
-        }
-        .sidebar-video-card:hover .sidebar-video-thumbnail { opacity: 0.7; }
-        .sidebar-play-icon {
-            position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
-            color: #fff; font-size: 3rem; text-shadow: 0 2px 10px rgba(0,0,0,0.7);
-            pointer-events: none;
-        }
-        .sidebar-video-title {
-            position: absolute; bottom: 0; left: 0; width: 100%;
-            background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0));
-            padding: 15px 15px 10px; color: white; font-size: 0.9rem; font-weight: 600;
-        }
+        /* --- CARD PEJABAT FULL VIEW --- */
+        .card-pejabat { border: none; border-radius: 15px; overflow: hidden; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.05); background: #fff; height: 100%; }
+        .card-pejabat:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
+        .card-pejabat-img-wrapper { height: 350px; background: #e9ecef; overflow: hidden; }
+        .card-pejabat-img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: 0.5s; }
+        .card-pejabat:hover .card-pejabat-img { transform: scale(1.05); }
+        .card-pejabat-body { padding: 20px; text-align: center; border-top: 4px solid var(--accent-gold); }
 
         /* --- DETAIL VIEWS --- */
         .detail-view-container { display: none; background: #fff; min-height: 100vh; padding-bottom: 50px; }
@@ -251,14 +125,25 @@
         
         .btn-back-float { position: fixed; bottom: 30px; right: 30px; z-index: 999; width: 50px; height: 50px; border-radius: 50%; display: none; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
 
+        /* --- SERVICES & VIDEO --- */
+        .service-box { background: white; padding: 35px 25px; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); height: 100%; transition: 0.3s; border-bottom: 5px solid transparent; cursor: pointer; }
+        .service-box:hover { transform: translateY(-10px); border-bottom: 5px solid var(--accent-gold); }
+        .service-icon { width: 80px; height: 80px; line-height: 80px; background: rgba(0, 51, 102, 0.05); color: var(--primary-blue); border-radius: 50%; margin: 0 auto 20px; font-size: 2rem; transition: 0.5s; }
+        .service-box:hover .service-icon { background: var(--primary-blue); color: var(--accent-gold); transform: rotateY(360deg); }
+
+        .sidebar-video-card { border: none; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s; display: block; background: #000; position: relative; margin-bottom: 20px; }
+        .sidebar-video-card:hover { transform: translateY(-3px); }
+        .sidebar-video-thumbnail { width: 100%; height: 180px; object-fit: cover; opacity: 0.85; transition: opacity 0.3s; }
+        .sidebar-video-card:hover .sidebar-video-thumbnail { opacity: 0.7; }
+        .sidebar-play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-size: 3rem; pointer-events: none; }
+        .sidebar-video-title { position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0)); padding: 15px 15px 10px; color: white; font-size: 0.9rem; font-weight: 600; }
+
         /* --- FOOTER & FLOAT --- */
         footer { background-color: #030d24; color: #d1d5db; padding: 60px 0 20px; margin-top: 80px; border-top: 5px solid var(--accent-gold); font-size: 0.9rem; }
         footer h5, footer h6 { color: white; letter-spacing: 0.5px; }
         footer a { color: #d1d5db; text-decoration: none; transition: 0.3s; }
         footer a:hover { color: var(--accent-gold); padding-left: 3px; }
         .footer-logo { width: 60px; height: auto; }
-        .contact-list li { margin-bottom: 12px; display: flex; align-items: flex-start; }
-        .contact-list i { color: var(--accent-gold); width: 20px; margin-top: 4px; margin-right: 10px; }
         .social-btn { width: 35px; height: 35px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #4b5563; color: #fff; border-radius: 50%; margin-right: 8px; transition: 0.3s; background: rgba(255,255,255,0.05); }
         .social-btn:hover { background: var(--accent-gold); color: #000; border-color: var(--accent-gold); }
         .footer-bottom { border-top: 1px solid #1f2937; margin-top: 40px; padding-top: 25px; text-align: center; font-size: 0.85rem; color: #9ca3af; }
@@ -271,8 +156,6 @@
         .btn-wa:hover::after { opacity: 1; transform: translateX(-5px); }
         .btn-top { background-color: var(--accent-gold); color: #222; opacity: 0; visibility: hidden; }
         .btn-top.show { opacity: 1; visibility: visible; }
-        
-        @keyframes pulse-green { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
     </style>
 </head>
 <body>
@@ -325,9 +208,12 @@
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Profil</a>
                         <ul class="dropdown-menu">
-                            <li><a class="dropdown-item" href="#">Sejarah Kementerian</a></li>
-                            <li><a class="dropdown-item" href="#pejabat-section">Profil Pejabat</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="openSejarah()">Sejarah LPKA</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="openPejabatFull()">Profil Pejabat</a></li>
                             <li><a class="dropdown-item" href="#" onclick="openVisiMisi()">Visi Misi</a></li>
+                            <li><hr class="dropdown-divider"></li>
+                            <li><a class="dropdown-item" href="#" onclick="openTupoksi()">Tugas Pokok & Fungsi</a></li>
+                            <li><a class="dropdown-item" href="#" onclick="openStruktur()">Struktur Organisasi</a></li>
                         </ul>
                     </li>
                     <li class="nav-item dropdown">
@@ -337,8 +223,9 @@
                             <li><a class="dropdown-item" href="#" onclick="openService('ajukan_cuti')">Ajukan Cuti</a></li>
                         </ul>
                     </li>
-                    <li class="nav-item"><a class="nav-link" href="#layanan-section">Layanan</a></li>
-                    <li class="nav-item"><a class="nav-link" href="#berita-section">Berita</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#" onclick="openInfoPublik()">Informasi Publik</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#layanan-section" onclick="showHome()">Layanan</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#berita-section" onclick="showHome()">Berita</a></li>
                     <li class="nav-item"><a class="nav-link" href="#kontak-section">Kontak</a></li>
                 </ul>
                 <form class="d-flex" role="search">
@@ -352,7 +239,6 @@
     </nav>
 
     <div id="main-view">
-        
         <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner" id="banner-container">
                 <div class="carousel-item active">
@@ -361,12 +247,8 @@
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </button>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
         </div>
 
         <div class="container my-5">
@@ -384,10 +266,11 @@
                 
                 <div class="col-lg-4">
                     <div class="sticky-sidebar">
-                        
                         <div class="sidebar-widget mb-4" id="pejabat-section" data-aos="fade-left" data-aos-delay="100">
                             <h5 class="fw-bold mb-4 border-start border-4 border-warning ps-3">Pejabat Struktural</h5>
-                            <div id="pejabat-container"><div class="text-center text-muted">Memuat data...</div></div>
+                            <div id="pejabat-container">
+                                <div class="text-center text-muted">Memuat data...</div>
+                            </div>
                         </div>
 
                         <div class="sidebar-widget" id="video-section" data-aos="fade-left" data-aos-delay="200">
@@ -399,7 +282,6 @@
                                  <a href="https://youtube.com" target="_blank" class="btn btn-sm btn-outline-danger w-100 rounded-pill fw-bold small">Lihat Channel <i class="fab fa-youtube ms-1"></i></a>
                             </div>
                         </div>
-
                     </div>
                 </div>
             </div>
@@ -433,9 +315,7 @@
     </div>
 
     <div id="visimisi-view" class="detail-view-container">
-        <div class="container pt-4 pb-2">
-            <button onclick="showHome()" class="btn btn-light text-primary fw-bold mb-3 shadow-sm px-4"><i class="fas fa-arrow-left me-2"></i> Kembali ke Beranda</button>
-        </div>
+        <div class="container pt-4 pb-2"><button onclick="showHome()" class="btn btn-light text-primary fw-bold mb-3 shadow-sm px-4"><i class="fas fa-arrow-left me-2"></i> Kembali ke Beranda</button></div>
         <div class="container mt-4 mb-5">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -445,12 +325,74 @@
                         <div style="width: 60px; height: 4px; background: var(--accent-gold); margin: 10px auto;"></div>
                     </div>
                     <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
-                        <div class="card-body p-5" id="visimisi-content-container">
-                            <div class="text-center text-muted">Memuat Visi Misi...</div>
-                        </div>
+                        <div class="card-body p-5" id="visimisi-content-container"><div class="text-center text-muted">Memuat Visi Misi...</div></div>
                     </div>
                 </div>
             </div>
+        </div>
+    </div>
+
+    <div id="infopublik-view" class="detail-view-container">
+        <div class="container pt-4">
+            <button onclick="showHome()" class="btn btn-light text-primary fw-bold mb-3 shadow-sm px-4"><i class="fas fa-arrow-left me-2"></i> Kembali</button>
+            <div class="text-center mb-5">
+                <span class="text-warning fw-bold text-uppercase ls-2">Transparansi</span>
+                <h3 class="fw-bold text-primary display-6">Informasi Publik</h3>
+                <div style="width: 60px; height: 4px; background: var(--accent-gold); margin: 10px auto;"></div>
+            </div>
+            <div class="row g-4" id="infopublik-container"></div>
+        </div>
+        <div class="modal fade" id="docPreviewModal" tabindex="-1">
+            <div class="modal-dialog modal-xl modal-dialog-centered">
+                <div class="modal-content" style="height: 90vh;">
+                    <div class="modal-header bg-light"><h5 class="modal-title fw-bold" id="docModalTitle">Preview Dokumen</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
+                    <div class="modal-body p-0" style="background: #f0f0f0;"><iframe id="docFrame" src="" style="width:100%; height:100%; border:none;"></iframe></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="sejarah-view" class="detail-view-container">
+        <div class="container pt-4">
+            <button onclick="showHome()" class="btn btn-light text-primary fw-bold mb-3 shadow-sm px-4"><i class="fas fa-arrow-left me-2"></i> Kembali</button>
+            <div id="sejarah-container" class="mt-4 pb-5"></div>
+        </div>
+    </div>
+
+    <div id="pejabat-view" class="detail-view-container">
+        <div class="container pt-4">
+            <button onclick="showHome()" class="btn btn-light text-primary fw-bold mb-3 shadow-sm px-4"><i class="fas fa-arrow-left me-2"></i> Kembali ke Beranda</button>
+            <div class="text-center mb-5">
+                <span class="text-warning fw-bold text-uppercase ls-2">Kepemimpinan</span>
+                <h3 class="fw-bold text-primary display-6">Profil Pejabat</h3>
+                <div style="width: 60px; height: 4px; background: var(--accent-gold); margin: 10px auto;"></div>
+            </div>
+            <div class="row g-4 justify-content-center pb-5" id="pejabat-full-container">
+                </div>
+        </div>
+    </div>
+
+    <div id="tupoksi-view" class="detail-view-container">
+        <div class="container pt-4">
+            <button onclick="showHome()" class="btn btn-light text-primary fw-bold mb-3 shadow-sm px-4"><i class="fas fa-arrow-left me-2"></i> Kembali</button>
+            <div class="text-center mb-5">
+                <span class="text-warning fw-bold text-uppercase ls-2">Tugas & Fungsi</span>
+                <h3 class="fw-bold text-primary display-6">Tupoksi</h3>
+                <div style="width: 60px; height: 4px; background: var(--accent-gold); margin: 10px auto;"></div>
+            </div>
+            <div id="tupoksi-container" class="row justify-content-center pb-5"></div>
+        </div>
+    </div>
+
+    <div id="struktur-view" class="detail-view-container">
+        <div class="container pt-4">
+            <button onclick="showHome()" class="btn btn-light text-primary fw-bold mb-3 shadow-sm px-4"><i class="fas fa-arrow-left me-2"></i> Kembali</button>
+            <div class="text-center mb-5">
+                <span class="text-warning fw-bold text-uppercase ls-2">Organisasi</span>
+                <h3 class="fw-bold text-primary display-6">Struktur Organisasi</h3>
+                <div style="width: 60px; height: 4px; background: var(--accent-gold); margin: 10px auto;"></div>
+            </div>
+            <div id="struktur-container" class="text-center pb-5"></div>
         </div>
     </div>
 
@@ -477,7 +419,6 @@
                         <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
-
                 <div class="col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <h6 class="fw-bold text-uppercase mb-3 border-bottom border-warning pb-2 d-inline-block">LINK TERKAIT</h6>
                     <ul class="list-unstyled">
@@ -488,18 +429,16 @@
                         <li class="mb-2"><a href="#">BPSDM Hukum & HAM</a></li>
                     </ul>
                 </div>
-
                 <div class="col-lg-2 mb-4" data-aos="fade-up" data-aos-delay="200">
                     <h6 class="fw-bold text-uppercase mb-3 border-bottom border-warning pb-2 d-inline-block">JELAJAHI</h6>
                     <ul class="list-unstyled">
                         <li class="mb-2"><a href="#" onclick="showHome()">Beranda</a></li>
-                        <li class="mb-2"><a href="#pejabat-section">Profil Pejabat</a></li>
-                        <li class="mb-2"><a href="#">Struktur Organisasi</a></li>
+                        <li class="mb-2"><a href="#" onclick="openPejabatFull()">Profil Pejabat</a></li>
+                        <li class="mb-2"><a href="#" onclick="openStruktur()">Struktur Organisasi</a></li>
                         <li class="mb-2"><a href="#layanan-section">Layanan Publik</a></li>
                         <li class="mb-2"><a href="#berita-section">Berita & Kegiatan</a></li>
                     </ul>
                 </div>
-
                 <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
                     <h6 class="fw-bold text-uppercase mb-3 border-bottom border-warning pb-2 d-inline-block">LOKASI KAMI</h6>
                     <div class="ratio ratio-16x9 shadow-sm rounded-4 overflow-hidden border border-secondary">
@@ -507,7 +446,6 @@
                     </div>
                 </div>
             </div>
-
             <div class="footer-bottom">
                 Laman Resmi LPKA Kelas I Kutoarjo<br>
                 Kementerian Imigrasi dan Pemasyarakatan Republik Indonesia<br>
@@ -526,13 +464,11 @@
     <script>
         AOS.init({ once: true, duration: 800, offset: 100 });
 
-        // URL GOOGLE APPS SCRIPT
-        const API_URL = 'https://script.google.com/macros/s/AKfycbzHlovwqodZeaGu2IPUoK0rF0BPj1wUAJTqFr4Ibi9j7x507xikXHuWsMAGxuWZhKAY/exec'; 
+        // UPDATE API URL
+        const API_URL = 'https://script.google.com/macros/s/AKfycbx23b07V8wHOdp2Jn4bZl88qRzOSn0x84YXulA7MpbiQSlgRf045emfe_OuQJRt31Im/exec'; 
         
         const dateOptions = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-        let globalBeritaList = [];
-        let globalVisiMisiText = []; 
-        let globalVideos = [];
+        let globalData = {};
 
         document.getElementById('current-date').innerText = new Date().toLocaleDateString('id-ID', dateOptions);
 
@@ -542,14 +478,11 @@
             else btnTop.classList.remove("show");
         };
 
-        // FUNGSI UNTUK MENYEMBUNYIKAN LOADER
         function hideLoader() {
             const loader = document.getElementById('loader-wrapper');
             if(loader) {
                 loader.classList.add('loader-hidden');
-                loader.addEventListener('transitionend', function() {
-                    loader.style.display = 'none';
-                });
+                loader.addEventListener('transitionend', function() { loader.style.display = 'none'; });
             }
         }
 
@@ -558,28 +491,22 @@
                 const response = await fetch(API_URL);
                 const data = await response.json();
                 
-                if (data.status === 'error') { 
-                    alert("API Error: " + data.message); 
-                    hideLoader();
-                    return; 
-                }
+                if (data.status === 'error') { alert("API Error: " + data.message); hideLoader(); return; }
                 
-                globalBeritaList = data.berita;
-                globalVisiMisiText = data.visimisi || [];
-                globalVideos = data.video || [];
+                globalData = data;
                 
                 renderBanner(data.banner); 
                 renderBerita(data.berita);
-                renderPejabat(data.pejabat);
-                renderVideoSidebar(globalVideos); 
+                renderPejabat(data.pejabat); 
+                renderVideoSidebar(data.video); 
+                renderInfoPublik(data.infoPublik);
+                renderSejarah(data.sejarah);
+                renderTupoksi(data.tupoksi);
+                renderStruktur(data.struktur);
                 
                 setTimeout(() => { AOS.refresh(); }, 500);
 
-            } catch (e) { 
-                console.error(e); 
-            } finally {
-                setTimeout(hideLoader, 500);
-            }
+            } catch (e) { console.error(e); } finally { setTimeout(hideLoader, 500); }
         }
 
         function fixGoogleDriveImage(url) {
@@ -590,30 +517,181 @@
 
         function getYoutubeId(url) {
             if (!url) return null;
-            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=)([^#&?]*).*/;
+            const regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|&v=|shorts\/)([^#&?]*).*/;
             const match = url.match(regExp);
             return (match && match[2].length === 11) ? match[2] : null;
         }
 
-        function renderBanner(list) {
-            const container = document.getElementById('banner-container');
-            if (!list || list.length === 0) {
-                container.innerHTML = `<div class="carousel-item active"><img src="https://via.placeholder.com/1200x600?text=Default+Banner" class="d-block w-100"><div class="carousel-caption"><h2>LPKA Kutoarjo</h2></div></div>`;
+        function getPreviewLink(url) {
+            if (!url) return "";
+            const match = url.match(/(?:d\/|id=)([\w-]+)/);
+            return match && match[1] ? `https://drive.google.com/file/d/${match[1]}/preview` : url;
+        }
+
+        function hideAllViews() {
+            const views = document.querySelectorAll('.detail-view-container');
+            views.forEach(v => v.style.display = 'none');
+            document.getElementById('main-view').style.display = 'none';
+        }
+
+        function showHome() {
+            hideAllViews();
+            document.getElementById('main-view').style.display = 'block';
+            document.querySelector('.btn-back-float').style.display = 'none';
+            window.scrollTo(0, 0);
+            AOS.refresh(); 
+        }
+
+        // --- SEJARAH: PERBAIKAN IMAGE 2 & 3 ---
+        function renderSejarah(list) {
+            const container = document.getElementById('sejarah-container');
+            if(!list || list.length === 0) { container.innerHTML = '<div class="text-center">Data sejarah belum tersedia.</div>'; return; }
+            
+            let item = list[0]; 
+            let judul = item.judul || "Sejarah LPKA";
+            // Ambil semua kemungkinan key
+            let rawDeskripsi = item.deskripsiSejarah || item.deskripsi || item.isi || item.konten || "";
+            let imgUtama = fixGoogleDriveImage(item.image || item.gambar || "");
+            
+            // Perbaikan: Cek berbagai kemungkinan nama key untuk gambar tengah
+            let imgTengah1 = fixGoogleDriveImage(item.gambarTengah1 || item.gambar_tengah_1 || item.image2 || item.gambar2 || "");
+            let imgTengah2 = fixGoogleDriveImage(item.gambarTengah2 || item.gambar_tengah_2 || item.image3 || item.gambar3 || "");
+
+            // Logic Split Paragraf & Insert Image
+            let paragraphs = rawDeskripsi.split(/\r?\n/).filter(p => p.trim() !== "");
+            let contentHtml = "";
+            let idx1 = Math.floor(paragraphs.length / 3);
+            let idx2 = Math.floor(2 * paragraphs.length / 3);
+            
+            if(paragraphs.length < 3) { idx1 = 0; idx2 = 1; }
+
+            paragraphs.forEach((p, i) => {
+                contentHtml += `<p class="lh-lg mb-3" style="text-align:justify;">${p}</p>`;
+                if(i === idx1 && imgTengah1) {
+                    contentHtml += `<div class="row justify-content-center my-4"><div class="col-md-10"><img src="${imgTengah1}" class="img-fluid rounded-3 shadow-sm w-100" alt="Dokumentasi Sejarah 1"></div></div>`;
+                }
+                if(i === idx2 && imgTengah2) {
+                    contentHtml += `<div class="row justify-content-center my-4"><div class="col-md-10"><img src="${imgTengah2}" class="img-fluid rounded-3 shadow-sm w-100" alt="Dokumentasi Sejarah 2"></div></div>`;
+                }
+            });
+
+            let html = `<div class="row justify-content-center"><div class="col-lg-10"><h2 class="fw-bold text-primary mb-4 text-center">${judul}</h2><div class="mb-5 text-center"><img src="${imgUtama}" class="img-fluid rounded-4 shadow-lg" style="max-height:500px; object-fit:cover;" alt="Foto Utama Sejarah"></div><div class="text-secondary fs-5">${contentHtml}</div></div></div>`;
+            container.innerHTML = html;
+        }
+
+        function openSejarah() {
+            hideAllViews();
+            document.getElementById('sejarah-view').style.display = 'block';
+            window.scrollTo(0,0);
+        }
+
+        function renderPejabat(list) {
+            const container = document.getElementById('pejabat-container');
+            if(!list || list.length === 0) {
+                container.innerHTML = '<div class="text-center text-muted">Data tidak tersedia</div>';
                 return;
             }
+            const kepala = list[0]; 
+            const imgUrl = fixGoogleDriveImage(kepala.foto) || "https://via.placeholder.com/150x150?text=No+Image";
+            
+            let html = `<div class="kepala-container text-center p-3" onclick="openPejabatFull()" title="Klik untuk lihat semua pejabat"><div class="kepala-img-container"><img src="${imgUrl}" class="kepala-img" alt="Foto Kepala"></div><h5 class="fw-bold text-primary mb-1">${kepala.nama}</h5><span class="badge bg-warning text-dark px-3 py-2 rounded-pill mt-2 shadow-sm">${kepala.jabatan}</span><div class="mt-3 text-muted small"><i class="fas fa-hand-pointer me-1"></i> Klik untuk lihat semua</div></div>`;
+            container.innerHTML = html;
+        }
+
+        function openPejabatFull() {
+            const container = document.getElementById('pejabat-full-container');
+            const list = globalData.pejabat || [];
+            
+            if(list.length === 0) {
+                container.innerHTML = '<div class="text-center">Data pejabat belum tersedia.</div>';
+            } else {
+                let html = '';
+                list.forEach((p, idx) => {
+                    let img = fixGoogleDriveImage(p.foto) || "https://via.placeholder.com/300x400?text=Foto";
+                    html += `<div class="col-md-6 col-lg-3" data-aos="fade-up" data-aos-delay="${idx * 100}"><div class="card card-pejabat"><div class="card-pejabat-img-wrapper"><img src="${img}" class="card-pejabat-img" alt="${p.nama}"></div><div class="card-pejabat-body"><h5 class="fw-bold text-primary mb-1 text-truncate" title="${p.nama}">${p.nama}</h5><small class="text-muted fw-bold text-uppercase">${p.jabatan}</small></div></div></div>`;
+                });
+                container.innerHTML = html;
+            }
+            hideAllViews();
+            document.getElementById('pejabat-view').style.display = 'block';
+            window.scrollTo(0,0);
+        }
+
+        function renderVideoSidebar(list) {
+            const container = document.getElementById('sidebar-video-container');
+            const limitedList = (list && Array.isArray(list)) ? list.slice(0, 2) : []; 
+            if (limitedList.length === 0) { container.innerHTML = '<div class="text-center text-muted small">Belum ada video</div>'; return; }
+            let html = '';
+            limitedList.forEach((item) => {
+                const link = item.link || item.url || item.link_video || "";
+                const videoId = getYoutubeId(link);
+                const thumbUrl = videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : 'https://via.placeholder.com/480x360?text=Video+Tidak+Tersedia';
+                html += `<a href="${link}" target="_blank" class="sidebar-video-card"><img src="${thumbUrl}" class="sidebar-video-thumbnail"><div class="sidebar-play-icon"><i class="fab fa-youtube"></i></div><div class="sidebar-video-title text-truncate">${item.judul || "Video LPKA"}</div></a>`;
+            });
+            container.innerHTML = html;
+        }
+
+        // --- INFO PUBLIK: PERBAIKAN PEMBACAAN KEY ---
+        function renderInfoPublik(list) {
+            const container = document.getElementById('infopublik-container');
+            if (!list || list.length === 0) { container.innerHTML = '<div class="col-12 text-center text-muted">Belum ada dokumen publik.</div>'; return; }
+            let html = '';
+            list.forEach((item) => {
+                // Perbaikan: Cek berbagai kemungkinan nama key (camelCase atau snake_case)
+                let title = item.namaDokumen || item.nama_dokumen || item.judul || "Dokumen";
+                let link = item.linkDokumenFull || item.link_dokumen_full || item.link || item.url || "";
+                let desc = item.deskripsiSingkat || item.deskripsi_singkat || item.deskripsi || "Dokumen Publik";
+                let img = item.imageUrl || item.image_url || item.gambar || "";
+                
+                let thumb = img ? `<img src="${fixGoogleDriveImage(img)}">` : `<div class="doc-icon"><i class="fas fa-file-pdf"></i></div>`;
+                
+                html += `<div class="col-md-6 col-lg-3"><div class="card card-doc" onclick="openDocPreview('${title}', '${link}')"><div class="doc-thumb">${thumb}<div class="doc-overlay"><i class="fas fa-eye text-white fa-2x"></i></div></div><div class="card-body"><h6 class="fw-bold text-primary mb-2 text-truncate" title="${title}">${title}</h6><p class="small text-muted mb-0">${desc}</p></div></div></div>`;
+            });
+            container.innerHTML = html;
+        }
+
+        function openDocPreview(title, url) {
+            if(!url) { alert("Link dokumen tidak valid."); return; }
+            document.getElementById('docModalTitle').innerText = title;
+            document.getElementById('docFrame').src = getPreviewLink(url);
+            new bootstrap.Modal(document.getElementById('docPreviewModal')).show();
+        }
+        function openInfoPublik() { hideAllViews(); document.getElementById('infopublik-view').style.display = 'block'; window.scrollTo(0,0); }
+
+        function renderTupoksi(list) {
+            const container = document.getElementById('tupoksi-container');
+            if(!list || list.length === 0) { container.innerHTML = '<div class="text-center">Data Tupoksi belum tersedia.</div>'; return; }
+            let html = '<div class="col-lg-10"><div class="accordion" id="accTupoksi">';
+            list.forEach((item, idx) => {
+                html += `<div class="accordion-item border-0 shadow-sm mb-3 rounded overflow-hidden"><h2 class="accordion-header"><button class="accordion-button ${idx!==0?'collapsed':''} fw-bold text-primary bg-light" type="button" data-bs-toggle="collapse" data-bs-target="#collapse${idx}">${item.kategori}</button></h2><div id="collapse${idx}" class="accordion-collapse collapse ${idx===0?'show':''}" data-bs-parent="#accTupoksi"><div class="accordion-body bg-white lh-lg text-secondary">${item.konten.replace(/\n/g, '<br>')}</div></div></div>`;
+            });
+            html += '</div></div>';
+            container.innerHTML = html;
+        }
+        function openTupoksi() { hideAllViews(); document.getElementById('tupoksi-view').style.display = 'block'; window.scrollTo(0,0); }
+
+        // --- STRUKTUR: PERBAIKAN URL DOKUMEN ---
+        function renderStruktur(list) {
+            const container = document.getElementById('struktur-container');
+            if(!list || list.length === 0) { container.innerHTML = '<div class="text-center">Data struktur belum tersedia.</div>'; return; }
+            let item = list[0];
+            
+            // Perbaikan: Cek berbagai kemungkinan nama key
+            let urlDoc = item.urlDokumen || item.url_dokumen || item.link_dokumen || item.link || "";
+
+            let html = `<h4 class="mb-4 fw-bold text-dark">${item.judul}</h4><img src="${fixGoogleDriveImage(item.image)}" class="img-fluid border rounded shadow-sm mb-4" style="max-height:80vh;"><p class="text-muted w-75 mx-auto">${item.deskripsi || ''}</p>${urlDoc ? `<a href="${urlDoc}" target="_blank" class="btn btn-outline-primary rounded-pill px-4 mt-3"><i class="fas fa-download me-2"></i>Unduh Dokumen SK</a>` : ''}`;
+            container.innerHTML = html;
+        }
+        function openStruktur() { hideAllViews(); document.getElementById('struktur-view').style.display = 'block'; window.scrollTo(0,0); }
+
+        function renderBanner(list) {
+            const container = document.getElementById('banner-container');
+            if (!list || list.length === 0) { container.innerHTML = `<div class="carousel-item active"><img src="https://via.placeholder.com/1200x600?text=Default+Banner" class="d-block w-100"><div class="carousel-caption"><h2>LPKA Kutoarjo</h2></div></div>`; return; }
             let html = '';
             list.forEach((item, index) => {
                 let activeClass = index === 0 ? 'active' : '';
                 let imgUrl = fixGoogleDriveImage(item.gambar) || "https://via.placeholder.com/1200x600?text=No+Image";
-                html += `
-                <div class="carousel-item ${activeClass}">
-                    <img src="${imgUrl}" class="d-block w-100" alt="Banner ${index}">
-                    <div class="carousel-caption">
-                        <h2 data-aos="fade-down" data-aos-delay="200">${item.judul}</h2>
-                        <p class="lead mt-3" data-aos="fade-up" data-aos-delay="400">${item.deskripsi}</p>
-                        <a href="#berita-section" class="btn btn-warning btn-banner shadow" data-aos="zoom-in" data-aos-delay="600">Lihat Berita <i class="fas fa-arrow-down ms-2"></i></a>
-                    </div>
-                </div>`;
+                html += `<div class="carousel-item ${activeClass}"><img src="${imgUrl}" class="d-block w-100" alt="Banner ${index}"><div class="carousel-caption"><h2 data-aos="fade-down" data-aos-delay="200">${item.judul}</h2><p class="lead mt-3" data-aos="fade-up" data-aos-delay="400">${item.deskripsi}</p><a href="#berita-section" class="btn btn-warning btn-banner shadow" data-aos="zoom-in" data-aos-delay="600">Lihat Berita <i class="fas fa-arrow-down ms-2"></i></a></div></div>`;
             });
             container.innerHTML = html;
             const carouselElement = document.querySelector('#heroCarousel');
@@ -622,115 +700,47 @@
             new bootstrap.Carousel(carouselElement, { interval: 5000, wrap: true, pause: 'hover' });
         }
 
-        function showHome() {
-            document.getElementById('detail-view').style.display = 'none';
-            document.getElementById('service-view').style.display = 'none';
-            document.getElementById('visimisi-view').style.display = 'none';
-            document.querySelector('.btn-back-float').style.display = 'none';
-            document.getElementById('main-view').style.display = 'block';
-            window.scrollTo(0, 0);
-            AOS.refresh(); 
-        }
-
+        // --- VISI MISI: PERBAIKAN TUJUAN ---
         function openVisiMisi() {
             const container = document.getElementById('visimisi-content-container');
-            if(globalVisiMisiText.length === 0) {
-                container.innerHTML = '<div class="text-center">Data Visi Misi belum tersedia.</div>';
-            } else {
+            let list = globalData.visimisi || [];
+            if(list.length === 0) { container.innerHTML = '<div class="text-center">Data Visi Misi belum tersedia.</div>'; } else {
                 let html = '<div class="row">';
-                
-                // FILTER DATA
-                let visiList = globalVisiMisiText.filter(item => item.kategori.toLowerCase().includes('visi'));
-                let misiList = globalVisiMisiText.filter(item => item.kategori.toLowerCase().includes('misi'));
-                let mottoList = globalVisiMisiText.filter(item => item.kategori.toLowerCase().includes('motto'));
+                let visiList = list.filter(item => item.kategori.toLowerCase().includes('visi'));
+                let misiList = list.filter(item => item.kategori.toLowerCase().includes('misi'));
+                // Perbaikan: Tambah filter untuk Tujuan
+                let tujuanList = list.filter(item => item.kategori.toLowerCase().includes('tujuan'));
+                let mottoList = list.filter(item => item.kategori.toLowerCase().includes('motto'));
 
-                // VISI
                 html += '<div class="col-md-12 mb-4 text-center"><h4 class="fw-bold text-primary mb-3"><i class="fas fa-eye me-2"></i>VISI</h4>';
                 visiList.forEach(v => { html += `<p class="lead fst-italic">"${v.konten}"</p>`; });
-                html += '</div>';
-                
-                // MISI
-                html += '<div class="col-12"><hr class="my-4"></div><div class="col-md-12"><h4 class="fw-bold text-primary mb-3 text-center"><i class="fas fa-bullseye me-2"></i>MISI</h4><ul class="list-group list-group-flush">';
-                misiList.forEach(m => { 
-                    // Split konten misi berdasarkan baris baru (enter di sheet)
-                    let points = m.konten.split(/\r?\n/);
-                    points.forEach(p => {
-                        if(p.trim() !== "") {
-                            html += `<li class="list-group-item bg-transparent border-0 ps-0"><i class="fas fa-check-circle text-warning me-3"></i>${p}</li>`;
-                        }
-                    });
-                });
+                html += '</div><div class="col-12"><hr class="my-4"></div><div class="col-md-12"><h4 class="fw-bold text-primary mb-3 text-center"><i class="fas fa-bullseye me-2"></i>MISI</h4><ul class="list-group list-group-flush">';
+                misiList.forEach(m => { let points = m.konten.split(/\r?\n/); points.forEach(p => { if(p.trim() !== "") html += `<li class="list-group-item bg-transparent border-0 ps-0"><i class="fas fa-check-circle text-warning me-3"></i>${p}</li>`; }); });
                 html += '</ul></div>';
-
-                // MOTTO
-                if (mottoList.length > 0) {
-                    html += '<div class="col-12"><hr class="my-4"></div><div class="col-md-12 text-center">';
-                    html += '<h4 class="fw-bold text-primary mb-3"><i class="fas fa-star me-2"></i>MOTTO</h4>';
-                    html += '<div class="d-inline-block bg-primary text-white px-4 py-3 rounded-3 shadow fw-bold fs-5">';
-                    mottoList.forEach(mt => { html += `<span>${mt.konten}</span>`; });
-                    html += '</div></div>';
+                
+                // Render Tujuan
+                if (tujuanList.length > 0) {
+                    html += '<div class="col-12"><hr class="my-4"></div><div class="col-md-12"><h4 class="fw-bold text-primary mb-3 text-center"><i class="fas fa-crosshairs me-2"></i>TUJUAN</h4><ul class="list-group list-group-flush">';
+                    tujuanList.forEach(t => { let points = t.konten.split(/\r?\n/); points.forEach(p => { if(p.trim() !== "") html += `<li class="list-group-item bg-transparent border-0 ps-0"><i class="fas fa-check text-primary me-3"></i>${p}</li>`; }); });
+                    html += '</ul></div>';
                 }
 
+                if (mottoList.length > 0) { html += '<div class="col-12"><hr class="my-4"></div><div class="col-md-12 text-center"><h4 class="fw-bold text-primary mb-3"><i class="fas fa-star me-2"></i>MOTTO</h4><div class="d-inline-block bg-primary text-white px-4 py-3 rounded-3 shadow fw-bold fs-5">'; mottoList.forEach(mt => { html += `<span>${mt.konten}</span>`; }); html += '</div></div>'; }
                 html += '</div>';
                 container.innerHTML = html;
             }
-            document.getElementById('main-view').style.display = 'none';
-            document.getElementById('detail-view').style.display = 'none';
-            document.getElementById('service-view').style.display = 'none';
-            document.getElementById('visimisi-view').style.display = 'block';
-            window.scrollTo(0, 0);
-        }
-
-        // --- RENDER VIDEO SIDEBAR (Card Khusus) ---
-        function renderVideoSidebar(list) {
-            const container = document.getElementById('sidebar-video-container');
-            // Ambil maksimal 2 video
-            const limitedList = list.slice(0, 2); 
-            
-            if (limitedList.length === 0) {
-                container.innerHTML = '<div class="text-center text-muted small">Belum ada video</div>';
-                return;
-            }
-
-            let html = '';
-            limitedList.forEach((item) => {
-                const videoId = getYoutubeId(item.link);
-                const thumbUrl = videoId ? `https://img.youtube.com/vi/${videoId}/hqdefault.jpg` : 'https://via.placeholder.com/480x360?text=No+Thumbnail';
-                
-                // Gunakan class 'sidebar-video-card' untuk styling khusus
-                html += `
-                <a href="${item.link}" target="_blank" class="sidebar-video-card">
-                    <img src="${thumbUrl}" class="sidebar-video-thumbnail" alt="${item.judul}">
-                    <div class="sidebar-play-icon"><i class="fab fa-youtube"></i></div>
-                    <div class="sidebar-video-title text-truncate">
-                        ${item.judul}
-                    </div>
-                </a>
-                `;
-            });
-            container.innerHTML = html;
+            hideAllViews(); document.getElementById('visimisi-view').style.display = 'block'; window.scrollTo(0, 0);
         }
 
         function openService(type) {
             const container = document.getElementById('service-content-area');
             let content = '';
-            if (type === 'kunjungan') {
-                content = `<div class="text-primary mb-3"><i class="fas fa-user-friends fa-4x"></i></div><h2 class="fw-bold text-dark mb-4">Layanan Kunjungan ABH</h2><div class="alert alert-info py-3 px-4 d-inline-block text-start" style="max-width:600px;"><h5 class="fw-bold mb-3"><i class="far fa-calendar-check me-2"></i>Jadwal Kunjungan:</h5><ul class="mb-0 fs-5"><li><strong>Rabu:</strong> 09.00 - 11.00 WIB</li><li><strong>Sabtu:</strong> 09.00 - 11.00 WIB</li></ul></div><p class="text-danger fw-bold mt-3"><i class="fas fa-exclamation-circle me-1"></i> Tanggal merah / Libur Nasional layanan ditiadakan.</p>`;
-            } else if (type === 'hukum') {
-                content = `<div class="text-secondary mb-3"><i class="fas fa-tools fa-4x"></i></div><h2 class="fw-bold text-dark mb-3">Bantuan Hukum</h2><p class="text-muted fs-5">Mohon maaf layanan belum tersedia, masih dalam tahap pengembangan.</p>`;
-            } else if (type === 'reintegrasi') {
-                content = `<div class="text-secondary mb-3"><i class="fas fa-hard-hat fa-4x"></i></div><h2 class="fw-bold text-dark mb-3">Reintegrasi Sosial</h2><p class="text-muted fs-5">Mohon maaf layanan belum tersedia, masih dalam tahap pengembangan.</p>`;
-            } else if (type === 'pengaduan') {
-                content = `<div class="text-success mb-3"><i class="fas fa-headset fa-4x"></i></div><h2 class="fw-bold text-dark mb-4">Layanan Pengaduan</h2><p>Hubungi 0858-6817-5592</p>`;
-            } else if (type === 'ajukan_cuti') {
-                content = `<div class="text-secondary mb-3"><i class="fas fa-calendar-alt fa-4x"></i></div><h2 class="fw-bold text-dark mb-3">Ajukan Cuti</h2><p class="text-muted fs-5">Mohon maaf layanan belum tersedia, masih dalam tahap pengembangan.</p>`;
-            }
-            container.innerHTML = content;
-            document.getElementById('main-view').style.display = 'none';
-            document.getElementById('detail-view').style.display = 'none';
-            document.getElementById('visimisi-view').style.display = 'none';
-            document.getElementById('service-view').style.display = 'block';
-            window.scrollTo(0, 0);
+            if (type === 'kunjungan') { content = `<div class="text-primary mb-3"><i class="fas fa-user-friends fa-4x"></i></div><h2 class="fw-bold text-dark mb-4">Layanan Kunjungan ABH</h2><div class="alert alert-info py-3 px-4 d-inline-block text-start" style="max-width:600px;"><h5 class="fw-bold mb-3"><i class="far fa-calendar-check me-2"></i>Jadwal Kunjungan:</h5><ul class="mb-0 fs-5"><li><strong>Rabu:</strong> 09.00 - 11.00 WIB</li><li><strong>Sabtu:</strong> 09.00 - 11.00 WIB</li></ul></div><p class="text-danger fw-bold mt-3"><i class="fas fa-exclamation-circle me-1"></i> Tanggal merah / Libur Nasional layanan ditiadakan.</p>`; } 
+            else if (type === 'hukum') { content = `<div class="text-secondary mb-3"><i class="fas fa-tools fa-4x"></i></div><h2 class="fw-bold text-dark mb-3">Bantuan Hukum</h2><p class="text-muted fs-5">Mohon maaf layanan belum tersedia, masih dalam tahap pengembangan.</p>`; } 
+            else if (type === 'reintegrasi') { content = `<div class="text-secondary mb-3"><i class="fas fa-hard-hat fa-4x"></i></div><h2 class="fw-bold text-dark mb-3">Reintegrasi Sosial</h2><p class="text-muted fs-5">Mohon maaf layanan belum tersedia, masih dalam tahap pengembangan.</p>`; } 
+            else if (type === 'pengaduan') { content = `<div class="text-success mb-3"><i class="fas fa-headset fa-4x"></i></div><h2 class="fw-bold text-dark mb-4">Layanan Pengaduan</h2><p>Hubungi 0858-6817-5592</p>`; } 
+            else if (type === 'ajukan_cuti') { content = `<div class="text-secondary mb-3"><i class="fas fa-calendar-alt fa-4x"></i></div><h2 class="fw-bold text-dark mb-3">Ajukan Cuti</h2><p class="text-muted fs-5">Mohon maaf layanan belum tersedia, masih dalam tahap pengembangan.</p>`; }
+            container.innerHTML = content; hideAllViews(); document.getElementById('service-view').style.display = 'block'; window.scrollTo(0, 0);
         }
 
         function renderBerita(list) {
@@ -748,63 +758,28 @@
         }
 
         function openDetail(index) {
-            const item = globalBeritaList.slice().reverse()[index];
+            const item = globalData.berita.slice().reverse()[index];
             if (!item) return;
             document.getElementById('detail-title').innerText = item.judul;
             let dateStr = item.tanggal ? new Date(item.tanggal).toLocaleDateString('id-ID', dateOptions) : "";
             document.getElementById('detail-date').innerHTML = `<i class="far fa-calendar-alt me-1"></i> ${dateStr} <span class="mx-2">|</span> <i class="fas fa-user-edit me-1 text-primary"></i> Oleh: Humas LPKA Kutoarjo`;
-
             const rawText = item.isi || "";
             let paragraphs = rawText.split('\n').filter(p => p.trim() !== "");
             let htmlContent = "";
             let insertIndex2 = Math.floor(paragraphs.length / 3);
             let insertIndex3 = Math.floor(2 * paragraphs.length / 3);
             if (paragraphs.length <= 2) { insertIndex2 = 0; insertIndex3 = 1; }
-
             paragraphs.forEach((p, idx) => {
                 htmlContent += `<p>${p}</p>`;
-                if (idx === insertIndex2 && item.gambar2) {
-                    let img2 = fixGoogleDriveImage(item.gambar2);
-                    if(img2) htmlContent += `<img src="${img2}" class="detail-extra-img" alt="Dokumentasi Tambahan 1">`;
-                }
-                if (idx === insertIndex3 && item.gambar3) {
-                     let img3 = fixGoogleDriveImage(item.gambar3);
-                     if(img3) htmlContent += `<img src="${img3}" class="detail-extra-img" alt="Dokumentasi Tambahan 2">`;
-                }
+                if (idx === insertIndex2 && item.gambar2) { let img2 = fixGoogleDriveImage(item.gambar2); if(img2) htmlContent += `<img src="${img2}" class="detail-extra-img" alt="Dokumentasi Tambahan 1">`; }
+                if (idx === insertIndex3 && item.gambar3) { let img3 = fixGoogleDriveImage(item.gambar3); if(img3) htmlContent += `<img src="${img3}" class="detail-extra-img" alt="Dokumentasi Tambahan 2">`; }
             });
             document.getElementById('detail-content').innerHTML = htmlContent;
-            const imgEl = document.getElementById('detail-img');
-            imgEl.src = fixGoogleDriveImage(item.gambar1) || "https://via.placeholder.com/800x500?text=No+Preview";
+            document.getElementById('detail-img').src = fixGoogleDriveImage(item.gambar1) || "https://via.placeholder.com/800x500?text=No+Preview";
             const btnContainer = document.getElementById('detail-extra-buttons');
-            if (item.link_publikasi && item.link_publikasi.trim() !== "") {
-                btnContainer.innerHTML = `<div class="card bg-light border-0 p-4 border-start border-5 border-success shadow-sm"><div class="d-flex align-items-center"><div class="me-3 text-success"><i class="fas fa-file-pdf fa-2x"></i></div><div><h6 class="fw-bold text-dark mb-1">Lampiran / Tautan Terkait</h6><a href="${item.link_publikasi}" target="_blank" class="btn btn-success btn-sm px-4 rounded-pill fw-bold"><i class="fas fa-external-link-alt me-2"></i> Buka Tautan</a></div></div></div>`;
-            } else { btnContainer.innerHTML = ""; }
+            if (item.link_publikasi && item.link_publikasi.trim() !== "") { btnContainer.innerHTML = `<div class="card bg-light border-0 p-4 border-start border-5 border-success shadow-sm"><div class="d-flex align-items-center"><div class="me-3 text-success"><i class="fas fa-file-pdf fa-2x"></i></div><div><h6 class="fw-bold text-dark mb-1">Lampiran / Tautan Terkait</h6><a href="${item.link_publikasi}" target="_blank" class="btn btn-success btn-sm px-4 rounded-pill fw-bold"><i class="fas fa-external-link-alt me-2"></i> Buka Tautan</a></div></div></div>`; } else { btnContainer.innerHTML = ""; }
             if(window.innerWidth < 992) { document.querySelector('.btn-back-float').style.display = 'flex'; }
-            document.getElementById('main-view').style.display = 'none';
-            document.getElementById('service-view').style.display = 'none';
-            document.getElementById('visimisi-view').style.display = 'none';
-            document.getElementById('detail-view').style.display = 'block';
-            window.scrollTo(0, 0);
-        }
-
-        function renderPejabat(list) {
-            const container = document.getElementById('pejabat-container');
-            if(!list || list.length === 0) {
-                container.innerHTML = '<div class="text-center text-muted">Data tidak tersedia</div>';
-                return;
-            }
-            const kepala = list[0]; 
-            const imgUrl = fixGoogleDriveImage(kepala.foto) || "https://via.placeholder.com/150x150?text=No+Image";
-            let html = `
-                <div class="kepala-container text-center p-3">
-                    <div class="kepala-img-container">
-                        <img src="${imgUrl}" class="kepala-img" alt="Foto Kepala">
-                    </div>
-                    <h5 class="fw-bold text-primary mb-1">${kepala.nama}</h5>
-                    <span class="badge bg-warning text-dark px-3 py-2 rounded-pill mt-2 shadow-sm">${kepala.jabatan}</span>
-                </div>
-            `;
-            container.innerHTML = html;
+            hideAllViews(); document.getElementById('detail-view').style.display = 'block'; window.scrollTo(0, 0);
         }
 
         document.addEventListener('DOMContentLoaded', loadData);
