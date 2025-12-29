@@ -8,7 +8,8 @@
     
     <title>Laman Unofficial LPKA Kelas 1 Kutoarjo</title>
     
-    <meta name="description" content="Selamat datang di Laman Unofficial LPKA Kelas 1 Kutoarjo.">
+    <meta name="description" content="Selamat datang di Laman Unofficial LPKA Kelas 1 Kutoarjo. Akses informasi terkini melalui menu Beranda, Profil, Kepegawaian, Layanan, Berita, dan Kontak kami secara mudah dan cepat.">
+    <meta name="keywords" content="LPKA Kutoarjo, Beranda, Profil, Kepegawaian, Layanan, Berita, Kontak, Kemenimipas, LPKA Kelas 1 Kutoarjo">
     
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -16,6 +17,7 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     
     <style>
+        /* --- STYLE DARI INDEX V2 --- */
         :root {
             --primary-blue: #003366; 
             --secondary-blue: #004080;
@@ -32,7 +34,7 @@
         #loader-wrapper {
             position: fixed; top: 0; left: 0; width: 100%; height: 100%;
             background: #ffffff; z-index: 9999; display: flex; flex-direction: column;
-            justify-content: center; align-items: center; transition: opacity 0.5s;
+            justify-content: center; align-items: center; transition: opacity 0.5s ease-out, visibility 0.5s ease-out;
         }
         .loader-content { position: relative; text-align: center; }
         .loader-img { width: 120px; height: auto; margin-bottom: 20px; animation: bounce-garcy 2s infinite ease-in-out; }
@@ -73,6 +75,7 @@
         .dropdown-menu { border: none; border-top: 4px solid var(--accent-gold); border-radius: 0 0 8px 8px; }
 
         /* --- HERO SLIDER --- */
+        .carousel-item { position: relative; width: 100%; }
         .carousel-item img { width: 100%; height: 600px; object-fit: cover; object-position: center; }
         .carousel-item::after { content: ""; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(to bottom, rgba(0,0,0,0) 30%, rgba(0,0,0,0.7) 90%); z-index: 1; }
         .carousel-caption { bottom: 15%; left: 5%; right: 5%; text-align: center; z-index: 2; padding-bottom: 20px; }
@@ -80,16 +83,18 @@
         .carousel-caption p { color: #f0f0f0; font-weight: 400; font-size: 1.1rem; letter-spacing: 0.5px; max-width: 800px; margin: 0 auto 20px auto; text-shadow: 0px 2px 5px rgba(0,0,0,0.7); }
         .btn-banner { font-size: 0.9rem; padding: 10px 25px; border-radius: 50px; text-transform: uppercase; letter-spacing: 1px; box-shadow: 0 4px 15px rgba(0,0,0,0.3); transition: transform 0.3s; }
         .btn-banner:hover { transform: translateY(-3px); }
-        @media (max-width: 768px) { .carousel-item img { height: 350px; } }
+        @media (max-width: 768px) { .carousel-item img { height: 350px; } .carousel-caption h2 { font-size: 1.2rem; } .carousel-caption p { font-size: 0.8rem; } }
 
-        /* --- CARD BERITA & DOC --- */
+        /* --- CARD BERITA --- */
         .card-news { border: none; border-radius: 12px; background: white; box-shadow: 0 5px 15px rgba(0,0,0,0.05); transition: all 0.4s; height: 100%; overflow: hidden; }
         .card-news:hover { transform: translateY(-8px); box-shadow: 0 15px 30px rgba(0,0,0,0.1); }
         .news-img-wrapper { height: 220px; overflow: hidden; position: relative; }
         .news-img-wrapper img { transition: transform 0.5s; width: 100%; height: 100%; object-fit: cover; }
         .card-news:hover .news-img-wrapper img { transform: scale(1.1); }
-        .news-date-badge { position: absolute; top: 15px; right: 15px; background: var(--accent-gold); color: var(--primary-blue); padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; }
-        
+        .news-date-badge { position: absolute; top: 15px; right: 15px; background: var(--accent-gold); color: var(--primary-blue); padding: 5px 12px; border-radius: 20px; font-size: 0.75rem; font-weight: 700; box-shadow: 0 2px 5px rgba(0,0,0,0.2); }
+        .news-title a { color: var(--primary-blue); transition: 0.2s; }
+
+        /* --- CARD INFORMASI PUBLIK --- */
         .card-doc { border: none; border-radius: 10px; background: #fff; box-shadow: 0 4px 10px rgba(0,0,0,0.05); transition: 0.3s; overflow: hidden; height: 100%; cursor: pointer; }
         .card-doc:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.15); border-bottom: 4px solid var(--accent-gold); }
         .doc-thumb { height: 160px; background: #eee; display: flex; align-items: center; justify-content: center; overflow: hidden; position: relative; }
@@ -102,20 +107,33 @@
         .sidebar-widget { background: white; padding: 30px; border-radius: 15px; margin-bottom: 30px; box-shadow: 0 5px 20px rgba(0,0,0,0.05); border: 1px solid #eee; }
         @media (min-width: 992px) { .sticky-sidebar { position: sticky; top: 100px; } }
         
-        /* Modifikasi Container Kepala agar bisa diklik */
         .kepala-container { cursor: pointer; transition: transform 0.3s; }
         .kepala-container:hover { transform: scale(1.02); }
         .kepala-img-container { width: 180px; height: 220px; margin: 0 auto 20px; border-radius: 8px; overflow: hidden; box-shadow: 0 10px 30px rgba(0, 51, 102, 0.25); background-color: #e9ecef; }
         .kepala-img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: all 0.5s ease; }
-        .kepala-container:hover .kepala-img { transform: scale(1.05); }
+        .kepala-container:hover .kepala-img { transform: scale(1.03); }
 
-        /* --- CARD PEJABAT FULL VIEW --- */
+        /* --- TAMBAHAN: CARD PEJABAT FULL VIEW (Dari Index v1 untuk fitur Profil Pejabat) --- */
         .card-pejabat { border: none; border-radius: 15px; overflow: hidden; transition: 0.3s; box-shadow: 0 5px 15px rgba(0,0,0,0.05); background: #fff; height: 100%; }
         .card-pejabat:hover { transform: translateY(-5px); box-shadow: 0 15px 30px rgba(0,0,0,0.15); }
         .card-pejabat-img-wrapper { height: 350px; background: #e9ecef; overflow: hidden; }
         .card-pejabat-img { width: 100%; height: 100%; object-fit: cover; object-position: top center; transition: 0.5s; }
         .card-pejabat:hover .card-pejabat-img { transform: scale(1.05); }
         .card-pejabat-body { padding: 20px; text-align: center; border-top: 4px solid var(--accent-gold); }
+        
+        /* --- LAYANAN --- */
+        .service-box { background: white; padding: 35px 25px; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); height: 100%; transition: 0.3s; border-bottom: 5px solid transparent; cursor: pointer; }
+        .service-box:hover { transform: translateY(-10px); border-bottom: 5px solid var(--accent-gold); }
+        .service-icon { width: 80px; height: 80px; line-height: 80px; background: rgba(0, 51, 102, 0.05); color: var(--primary-blue); border-radius: 50%; margin: 0 auto 20px; font-size: 2rem; transition: 0.5s; }
+        .service-box:hover .service-icon { background: var(--primary-blue); color: var(--accent-gold); transform: rotateY(360deg); }
+
+        /* --- CARD VIDEO SIDEBAR --- */
+        .sidebar-video-card { border: none; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s ease; text-decoration: none; display: block; background: #000; position: relative; margin-bottom: 20px; }
+        .sidebar-video-card:hover { transform: translateY(-3px); box-shadow: 0 8px 18px rgba(0,0,0,0.2); }
+        .sidebar-video-thumbnail { width: 100%; height: 180px; object-fit: cover; opacity: 0.85; transition: opacity 0.3s; }
+        .sidebar-video-card:hover .sidebar-video-thumbnail { opacity: 0.7; }
+        .sidebar-play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-size: 3rem; text-shadow: 0 2px 10px rgba(0,0,0,0.7); pointer-events: none; }
+        .sidebar-video-title { position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0)); padding: 15px 15px 10px; color: white; font-size: 0.9rem; font-weight: 600; }
 
         /* --- DETAIL VIEWS --- */
         .detail-view-container { display: none; background: #fff; min-height: 100vh; padding-bottom: 50px; }
@@ -125,25 +143,14 @@
         
         .btn-back-float { position: fixed; bottom: 30px; right: 30px; z-index: 999; width: 50px; height: 50px; border-radius: 50%; display: none; align-items: center; justify-content: center; box-shadow: 0 4px 10px rgba(0,0,0,0.3); }
 
-        /* --- SERVICES & VIDEO --- */
-        .service-box { background: white; padding: 35px 25px; border-radius: 15px; text-align: center; box-shadow: 0 5px 15px rgba(0,0,0,0.05); height: 100%; transition: 0.3s; border-bottom: 5px solid transparent; cursor: pointer; }
-        .service-box:hover { transform: translateY(-10px); border-bottom: 5px solid var(--accent-gold); }
-        .service-icon { width: 80px; height: 80px; line-height: 80px; background: rgba(0, 51, 102, 0.05); color: var(--primary-blue); border-radius: 50%; margin: 0 auto 20px; font-size: 2rem; transition: 0.5s; }
-        .service-box:hover .service-icon { background: var(--primary-blue); color: var(--accent-gold); transform: rotateY(360deg); }
-
-        .sidebar-video-card { border: none; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 12px rgba(0,0,0,0.1); transition: transform 0.3s; display: block; background: #000; position: relative; margin-bottom: 20px; }
-        .sidebar-video-card:hover { transform: translateY(-3px); }
-        .sidebar-video-thumbnail { width: 100%; height: 180px; object-fit: cover; opacity: 0.85; transition: opacity 0.3s; }
-        .sidebar-video-card:hover .sidebar-video-thumbnail { opacity: 0.7; }
-        .sidebar-play-icon { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); color: #fff; font-size: 3rem; pointer-events: none; }
-        .sidebar-video-title { position: absolute; bottom: 0; left: 0; width: 100%; background: linear-gradient(to top, rgba(0,0,0,0.9), rgba(0,0,0,0)); padding: 15px 15px 10px; color: white; font-size: 0.9rem; font-weight: 600; }
-
         /* --- FOOTER & FLOAT --- */
         footer { background-color: #030d24; color: #d1d5db; padding: 60px 0 20px; margin-top: 80px; border-top: 5px solid var(--accent-gold); font-size: 0.9rem; }
         footer h5, footer h6 { color: white; letter-spacing: 0.5px; }
         footer a { color: #d1d5db; text-decoration: none; transition: 0.3s; }
         footer a:hover { color: var(--accent-gold); padding-left: 3px; }
         .footer-logo { width: 60px; height: auto; }
+        .contact-list li { margin-bottom: 12px; display: flex; align-items: flex-start; }
+        .contact-list i { color: var(--accent-gold); width: 20px; margin-top: 4px; margin-right: 10px; }
         .social-btn { width: 35px; height: 35px; display: inline-flex; align-items: center; justify-content: center; border: 1px solid #4b5563; color: #fff; border-radius: 50%; margin-right: 8px; transition: 0.3s; background: rgba(255,255,255,0.05); }
         .social-btn:hover { background: var(--accent-gold); color: #000; border-color: var(--accent-gold); }
         .footer-bottom { border-top: 1px solid #1f2937; margin-top: 40px; padding-top: 25px; text-align: center; font-size: 0.85rem; color: #9ca3af; }
@@ -156,6 +163,8 @@
         .btn-wa:hover::after { opacity: 1; transform: translateX(-5px); }
         .btn-top { background-color: var(--accent-gold); color: #222; opacity: 0; visibility: hidden; }
         .btn-top.show { opacity: 1; visibility: visible; }
+        
+        @keyframes pulse-green { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); } 70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
     </style>
 </head>
 <body>
@@ -224,6 +233,7 @@
                         </ul>
                     </li>
                     <li class="nav-item"><a class="nav-link" href="#" onclick="openInfoPublik()">Informasi Publik</a></li>
+                    
                     <li class="nav-item"><a class="nav-link" href="#layanan-section" onclick="showHome()">Layanan</a></li>
                     <li class="nav-item"><a class="nav-link" href="#berita-section" onclick="showHome()">Berita</a></li>
                     <li class="nav-item"><a class="nav-link" href="#kontak-section">Kontak</a></li>
@@ -239,6 +249,7 @@
     </nav>
 
     <div id="main-view">
+        
         <div id="heroCarousel" class="carousel slide carousel-fade" data-bs-ride="carousel">
             <div class="carousel-inner" id="banner-container">
                 <div class="carousel-item active">
@@ -247,8 +258,12 @@
                     </div>
                 </div>
             </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev"><span class="carousel-control-prev-icon"></span></button>
-            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next"><span class="carousel-control-next-icon"></span></button>
+            <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            </button>
         </div>
 
         <div class="container my-5">
@@ -266,11 +281,10 @@
                 
                 <div class="col-lg-4">
                     <div class="sticky-sidebar">
+                        
                         <div class="sidebar-widget mb-4" id="pejabat-section" data-aos="fade-left" data-aos-delay="100">
                             <h5 class="fw-bold mb-4 border-start border-4 border-warning ps-3">Pejabat Struktural</h5>
-                            <div id="pejabat-container">
-                                <div class="text-center text-muted">Memuat data...</div>
-                            </div>
+                            <div id="pejabat-container"><div class="text-center text-muted">Memuat data...</div></div>
                         </div>
 
                         <div class="sidebar-widget" id="video-section" data-aos="fade-left" data-aos-delay="200">
@@ -282,6 +296,7 @@
                                  <a href="https://youtube.com" target="_blank" class="btn btn-sm btn-outline-danger w-100 rounded-pill fw-bold small">Lihat Channel <i class="fab fa-youtube ms-1"></i></a>
                             </div>
                         </div>
+
                     </div>
                 </div>
             </div>
@@ -314,8 +329,22 @@
         <div class="container pt-4"><button onclick="showHome()" class="btn btn-light text-primary fw-bold mb-3 shadow-sm px-4"><i class="fas fa-arrow-left me-2"></i> Kembali ke Beranda</button><div class="row justify-content-center mt-5"><div class="col-lg-8 text-center"><div id="service-content-area" class="card shadow-lg border-0 p-5 rounded-4"></div></div></div></div>
     </div>
 
+    <div id="pejabat-view" class="detail-view-container">
+        <div class="container pt-4">
+            <button onclick="showHome()" class="btn btn-light text-primary fw-bold mb-3 shadow-sm px-4"><i class="fas fa-arrow-left me-2"></i> Kembali ke Beranda</button>
+            <div class="text-center mb-5">
+                <span class="text-warning fw-bold text-uppercase ls-2">Kepemimpinan</span>
+                <h3 class="fw-bold text-primary display-6">Profil Pejabat</h3>
+                <div style="width: 60px; height: 4px; background: var(--accent-gold); margin: 10px auto;"></div>
+            </div>
+            <div class="row g-4 justify-content-center pb-5" id="pejabat-full-container"></div>
+        </div>
+    </div>
+
     <div id="visimisi-view" class="detail-view-container">
-        <div class="container pt-4 pb-2"><button onclick="showHome()" class="btn btn-light text-primary fw-bold mb-3 shadow-sm px-4"><i class="fas fa-arrow-left me-2"></i> Kembali ke Beranda</button></div>
+        <div class="container pt-4 pb-2">
+            <button onclick="showHome()" class="btn btn-light text-primary fw-bold mb-3 shadow-sm px-4"><i class="fas fa-arrow-left me-2"></i> Kembali ke Beranda</button>
+        </div>
         <div class="container mt-4 mb-5">
             <div class="row justify-content-center">
                 <div class="col-lg-8">
@@ -325,7 +354,9 @@
                         <div style="width: 60px; height: 4px; background: var(--accent-gold); margin: 10px auto;"></div>
                     </div>
                     <div class="card shadow-lg border-0 rounded-4 overflow-hidden">
-                        <div class="card-body p-5" id="visimisi-content-container"><div class="text-center text-muted">Memuat Visi Misi...</div></div>
+                        <div class="card-body p-5" id="visimisi-content-container">
+                            <div class="text-center text-muted">Memuat Visi Misi...</div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -339,14 +370,22 @@
                 <span class="text-warning fw-bold text-uppercase ls-2">Transparansi</span>
                 <h3 class="fw-bold text-primary display-6">Informasi Publik</h3>
                 <div style="width: 60px; height: 4px; background: var(--accent-gold); margin: 10px auto;"></div>
+                <p class="text-muted">Akses dokumen publik LPKA Kelas I Kutoarjo.</p>
             </div>
-            <div class="row g-4" id="infopublik-container"></div>
+            <div class="row g-4" id="infopublik-container">
+                </div>
         </div>
+
         <div class="modal fade" id="docPreviewModal" tabindex="-1">
             <div class="modal-dialog modal-xl modal-dialog-centered">
                 <div class="modal-content" style="height: 90vh;">
-                    <div class="modal-header bg-light"><h5 class="modal-title fw-bold" id="docModalTitle">Preview Dokumen</h5><button type="button" class="btn-close" data-bs-dismiss="modal"></button></div>
-                    <div class="modal-body p-0" style="background: #f0f0f0;"><iframe id="docFrame" src="" style="width:100%; height:100%; border:none;"></iframe></div>
+                    <div class="modal-header bg-light">
+                        <h5 class="modal-title fw-bold" id="docModalTitle">Preview Dokumen</h5>
+                        <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+                    <div class="modal-body p-0" style="background: #f0f0f0;">
+                        <iframe id="docFrame" src="" style="width:100%; height:100%; border:none;"></iframe>
+                    </div>
                 </div>
             </div>
         </div>
@@ -356,19 +395,6 @@
         <div class="container pt-4">
             <button onclick="showHome()" class="btn btn-light text-primary fw-bold mb-3 shadow-sm px-4"><i class="fas fa-arrow-left me-2"></i> Kembali</button>
             <div id="sejarah-container" class="mt-4 pb-5"></div>
-        </div>
-    </div>
-
-    <div id="pejabat-view" class="detail-view-container">
-        <div class="container pt-4">
-            <button onclick="showHome()" class="btn btn-light text-primary fw-bold mb-3 shadow-sm px-4"><i class="fas fa-arrow-left me-2"></i> Kembali ke Beranda</button>
-            <div class="text-center mb-5">
-                <span class="text-warning fw-bold text-uppercase ls-2">Kepemimpinan</span>
-                <h3 class="fw-bold text-primary display-6">Profil Pejabat</h3>
-                <div style="width: 60px; height: 4px; background: var(--accent-gold); margin: 10px auto;"></div>
-            </div>
-            <div class="row g-4 justify-content-center pb-5" id="pejabat-full-container">
-                </div>
         </div>
     </div>
 
@@ -419,6 +445,7 @@
                         <a href="#" class="social-btn"><i class="fab fa-youtube"></i></a>
                     </div>
                 </div>
+
                 <div class="col-lg-3 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <h6 class="fw-bold text-uppercase mb-3 border-bottom border-warning pb-2 d-inline-block">LINK TERKAIT</h6>
                     <ul class="list-unstyled">
@@ -429,6 +456,7 @@
                         <li class="mb-2"><a href="#">BPSDM Hukum & HAM</a></li>
                     </ul>
                 </div>
+
                 <div class="col-lg-2 mb-4" data-aos="fade-up" data-aos-delay="200">
                     <h6 class="fw-bold text-uppercase mb-3 border-bottom border-warning pb-2 d-inline-block">JELAJAHI</h6>
                     <ul class="list-unstyled">
@@ -439,6 +467,7 @@
                         <li class="mb-2"><a href="#berita-section">Berita & Kegiatan</a></li>
                     </ul>
                 </div>
+
                 <div class="col-lg-4 mb-4" data-aos="fade-up" data-aos-delay="300">
                     <h6 class="fw-bold text-uppercase mb-3 border-bottom border-warning pb-2 d-inline-block">LOKASI KAMI</h6>
                     <div class="ratio ratio-16x9 shadow-sm rounded-4 overflow-hidden border border-secondary">
@@ -446,6 +475,7 @@
                     </div>
                 </div>
             </div>
+
             <div class="footer-bottom">
                 Laman Resmi LPKA Kelas I Kutoarjo<br>
                 Kementerian Imigrasi dan Pemasyarakatan Republik Indonesia<br>
