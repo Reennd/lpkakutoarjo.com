@@ -596,5 +596,48 @@ function getQueryParam(param) {
     const urlParams = new URLSearchParams(window.location.search);
     return urlParams.get(param);
 }
+// Tambahkan fungsi ini di bagian bawah interaktif.js
+function updateSEOMeta(title, desc, image) {
+    // Update Judul Browser
+    document.title = title + " - LPKA Kutoarjo";
+
+    // Update Meta Description
+    let metaDesc = document.querySelector('meta[name="description"]');
+    if (!metaDesc) {
+        metaDesc = document.createElement('meta');
+        metaDesc.name = "description";
+        document.head.appendChild(metaDesc);
+    }
+    metaDesc.content = desc.substring(0, 160); // Ambil 160 karakter pertama
+
+    // Update Open Graph (untuk share WA/FB)
+    let ogTitle = document.querySelector('meta[property="og:title"]');
+    if(ogTitle) ogTitle.content = title;
+    
+    let ogDesc = document.querySelector('meta[property="og:description"]');
+    if(ogDesc) ogDesc.content = desc.substring(0, 160);
+
+    let ogImg = document.querySelector('meta[property="og:image"]');
+    if(ogImg && image) ogImg.content = image;
+}
+
+// PANGGIL FUNGSI INI DI DALAM renderDetailBerita
+// Cari fungsi renderDetailBerita di interaktif.js, lalu tambahkan baris ini di bagian bawah fungsi tersebut:
+/*
+function renderDetailBerita(list) {
+    // ... kode lama ...
+    
+    const item = list[id];
+    
+    // ... kode lama render HTML ...
+
+    // --- TAMBAHAN UNTUK SEO ---
+    if(item) {
+       let img = fixGoogleDriveImage(item.gambar1);
+       let ringkasan = item.ringkasan || item.isi || "Berita terkini LPKA Kutoarjo";
+       updateSEOMeta(item.judul, ringkasan, img);
+    }
+}
+*/
 
 document.addEventListener('DOMContentLoaded', loadData);
